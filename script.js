@@ -1,12 +1,11 @@
 // ===== 1. PROGRAMMER =====
 // Her legger du inn programmene. Én linje per program:
-//   { navn: "...", ikon: "...", beskrivelse: "...", lenke: "https://..." }
-// Ikonet kan være en hvilken som helst emoji.
+//   { navn: "...", beskrivelse: "...", lenke: "https://..." }
 const programmer = [
-  { navn: "Landax", ikon: "🦺", beskrivelse: "Kvalitet og HMS", lenke: "https://norskkylling.landax.no/dashboard/71" },
-  { navn: "Together", ikon: "💬", beskrivelse: "Internkommunikasjon", lenke: "https://rema1000no.relesysapp.net/#/" },
+  { navn: "Landax", beskrivelse: "Kvalitet og HMS", lenke: "https://norskkylling.landax.no/dashboard/71" },
+  { navn: "Together", beskrivelse: "Internkommunikasjon", lenke: "https://rema1000no.relesysapp.net/#/" },
   // Legg til flere programmer her, for eksempel:
-  // { navn: "Timeføring", ikon: "⏱️", beskrivelse: "Før timer", lenke: "https://..." },
+  // { navn: "Timeføring", beskrivelse: "Før timer", lenke: "https://..." },
 ];
 
 const programliste = document.getElementById("programliste");
@@ -18,9 +17,9 @@ programmer.forEach(function (program) {
   kort.target = "_blank";   // åpner i ny fane
   kort.rel = "noopener";
   kort.innerHTML =
-    '<span class="ikon">' + program.ikon + "</span>" +
-    "<span>" + program.navn + "</span>" +
-    "<small>" + program.beskrivelse + "</small>";
+    '<span class="navn">' + program.navn + "</span>" +
+    '<span class="beskrivelse">' + program.beskrivelse + "</span>" +
+    '<span class="etikett">Åpne ↗</span>';
   programliste.appendChild(kort);
 });
 

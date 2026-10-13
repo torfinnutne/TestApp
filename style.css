@@ -1,24 +1,37 @@
-/* ===== FARGER =====
-   Bytt ut fargekodene her med Norsk Kyllings offisielle farger,
-   så endres hele siden. (Fargekoder finner du i firmaets profilmanual.) */
+/* ===== FARGER OG SKRIFT FRA DESIGNMANUALEN =====
+   Kilde: designmanual.norsk-kylling.no (skjermfarger, RGB/HEX) */
 :root {
-  --hovedfarge: #c8102e;     /* rød – knapper, overskrifter */
-  --hovedfarge-mork: #8f0b21;/* mørkere rød – topplinje */
-  --aksent: #f2b705;         /* gul – små detaljer */
-  --bakgrunn: #faf6ef;       /* varm, lys beige */
-  --kort: #ffffff;
-  --tekst: #2b2521;
-  --dempet: #7a706a;         /* grå tekst */
-  --kant: #ece4d8;
+  /* Hovedfarger */
+  --mork-gronn: #003428;      /* Mørk grønn (PMS 553) */
+  --gronn: #00562f;           /* Grønn */
+  --solgul: #fff0a5;          /* Solgul */
+  --solgul-70: #fff5c0;       /* Solgul 70 % */
+  --solgul-40: #fff9db;       /* Solgul 40 % */
+  --hvit: #ffffff;
+
+  /* Tilleggsfarger */
+  --orange: #f58025;          /* Orange */
+  --orange-30: #fcd9bd;       /* Orange 30 % */
+  --varm-gra: #e4e1dc;        /* Varm grå */
+  --mork-gronn-60: #66857e;   /* Mørk grønn 60 % */
+
+  /* Skrift: Maison Neue er profilskriften. Den er lisensbelagt og
+     brukes bare hvis den er installert på maskinen. Ellers brukes Arial,
+     som manualen anbefaler som erstatning. */
+  --skrift: "Maison Neue", Arial, Helvetica, sans-serif;
+  --skrift-mono: "Maison Neue Mono", "Courier New", monospace;
+
+  /* Avrundede hjørner – manualen bruker små, myke hjørner */
+  --hjorne: 10px;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: "Nunito", Arial, sans-serif;
-  background: var(--bakgrunn);
-  color: var(--tekst);
+  font-family: var(--skrift);
+  background: var(--solgul-40);
+  color: var(--mork-gronn);
   line-height: 1.5;
 }
 
@@ -32,78 +45,78 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 10px 24px;
-  background: var(--hovedfarge-mork);
+  padding: 14px 24px;
+  background: var(--mork-gronn);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.logo img { height: 44px; }
-.logo img + .logo-tekst { display: none; } /* skjul teksten når logoen finnes */
-.logo-tekst { font-size: 1.4em; font-weight: 800; }
+.logo { display: flex; align-items: center; }
+.logo img { height: 36px; display: block; }
 
 nav { display: flex; flex-wrap: wrap; gap: 4px; }
 
 nav a {
-  color: white;
+  color: var(--solgul);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--hjorne);
 }
 
-nav a:hover { background: rgba(255, 255, 255, 0.15); }
+nav a:hover { background: var(--gronn); }
 
 /* ===== VELKOMSTFELT ===== */
 .velkommen {
-  background: linear-gradient(135deg, var(--hovedfarge), var(--hovedfarge-mork));
-  color: white;
-  padding: 48px 24px 72px;
+  background: var(--mork-gronn);
+  color: var(--solgul);
+  padding: 40px 24px 88px;
   margin: 0;
   border-radius: 0;
-  box-shadow: none;
   text-align: center;
 }
 
-.velkommen h1 { margin: 4px 0; font-size: 2.4em; font-weight: 800; }
-.velkommen p { margin: 0; opacity: 0.9; }
-#dato { text-transform: capitalize; color: var(--aksent); font-weight: 700; opacity: 1; }
+.velkommen h1 {
+  margin: 4px 0 8px;
+  font-size: 2.6em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.velkommen p { margin: 0; color: var(--solgul-70); }
+
+#dato {
+  font-family: var(--skrift-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85em;
+  color: var(--orange);
+}
 
 /* ===== INNHOLD ===== */
 main {
   max-width: 1100px;
-  margin: -40px auto 0;   /* trekker innholdet litt opp over velkomstfeltet */
+  margin: -48px auto 0;   /* trekker innholdet litt opp over velkomstfeltet */
   padding: 0 16px;
 }
 
 section {
-  background: var(--kort);
-  border-radius: 14px;
-  padding: 20px 24px;
+  background: var(--hvit);
+  border-radius: var(--hjorne);
+  padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 16px rgba(60, 30, 10, 0.08);
 }
 
 h2 {
   margin: 0 0 16px;
-  font-size: 1.4em;
-  font-weight: 800;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
-h2::after {               /* liten gul strek under overskriftene */
-  content: "";
-  display: block;
-  width: 40px;
-  height: 4px;
-  margin-top: 6px;
-  border-radius: 2px;
-  background: var(--aksent);
+/* Små etiketter i mono-skrift, som "LES MER" i manualens webeksempel */
+.etikett {
+  font-family: var(--skrift-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75em;
 }
 
 .to-kolonner {
@@ -112,65 +125,68 @@ h2::after {               /* liten gul strek under overskriftene */
   gap: 24px;
 }
 
-.to-kolonner section { margin-bottom: 24px; }
-
 @media (max-width: 760px) {
-  .to-kolonner { grid-template-columns: 1fr; }
-  .velkommen h1 { font-size: 1.8em; }
+  .to-kolonner { grid-template-columns: 1fr; gap: 0; }
+  .velkommen h1 { font-size: 1.9em; }
+  .topplinje { padding: 12px 16px; }
+  .logo img { height: 30px; }
 }
 
 /* ===== PROGRAMKORT ===== */
 .kortrutenett {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
 }
 
 .programkort {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 20px 12px;
-  border: 1px solid var(--kant);
-  border-radius: 12px;
-  background: var(--bakgrunn);
-  color: var(--tekst);
+  gap: 4px;
+  padding: 20px;
+  min-height: 130px;
+  border-radius: var(--hjorne);
+  background: var(--solgul);
+  color: var(--mork-gronn);
   text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: background 0.15s;
 }
 
-.programkort:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.18);
-  border-color: var(--hovedfarge);
-}
-
-.programkort .ikon { font-size: 2em; }
-.programkort small { color: var(--dempet); font-weight: 400; }
+.programkort:hover { background: var(--solgul-70); }
+.programkort .navn { font-size: 1.25em; font-weight: 600; }
+.programkort .beskrivelse { flex: 1; }
+.programkort .etikett { color: var(--gronn); }
+.programkort:hover .etikett { text-decoration: underline; }
 
 /* ===== NYHETER ===== */
-article { padding: 12px 0; border-bottom: 1px solid var(--kant); }
-article:last-child { border-bottom: none; }
-article h3 { margin: 0 0 4px; }
+article { padding: 14px 0; border-bottom: 1px solid var(--varm-gra); }
+article:first-of-type { padding-top: 0; }
+article:last-child { border-bottom: none; padding-bottom: 0; }
+article h3 { margin: 2px 0 4px; font-weight: 600; }
 article p { margin: 0; }
-.dato { color: var(--hovedfarge); font-size: 0.85em; font-weight: 700; }
+
+.dato {
+  font-family: var(--skrift-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75em;
+  color: var(--mork-gronn-60);
+}
 
 /* ===== KALENDER ===== */
+#kalender { background: var(--solgul-70); }
 .hendelser { list-style: none; margin: 0; padding: 0; }
-.hendelser li { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
+.hendelser li { display: flex; align-items: center; gap: 14px; padding: 8px 0; }
 
 .dag {
   flex: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background: var(--hovedfarge);
-  color: white;
-  font-weight: 800;
-  font-size: 1.2em;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--hjorne);
+  background: var(--mork-gronn);
+  color: var(--solgul);
+  font-weight: 600;
+  font-size: 1.3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -178,23 +194,44 @@ article p { margin: 0; }
   line-height: 1;
 }
 
-.dag small { font-size: 0.55em; text-transform: uppercase; font-weight: 700; }
+.dag small {
+  font-family: var(--skrift-mono);
+  font-size: 0.5em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
 
 /* ===== KONTAKTER ===== */
 #sok {
   width: 100%;
-  padding: 10px 14px;
+  padding: 12px 16px;
   margin-bottom: 12px;
   font: inherit;
-  border: 1px solid var(--kant);
-  border-radius: 999px;
-  background: var(--bakgrunn);
+  color: var(--mork-gronn);
+  border: 1px solid var(--varm-gra);
+  border-radius: var(--hjorne);
+  background: var(--solgul-40);
 }
 
-#sok:focus { outline: 2px solid var(--hovedfarge); }
+#sok:focus { outline: 2px solid var(--gronn); }
 
 table { width: 100%; border-collapse: collapse; }
-th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--kant); }
-th { color: var(--dempet); font-size: 0.85em; text-transform: uppercase; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--varm-gra); }
 
-footer { text-align: center; color: var(--dempet); padding: 24px 16px; }
+th {
+  font-family: var(--skrift-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75em;
+  font-weight: 400;
+  color: var(--mork-gronn-60);
+}
+
+/* ===== BUNN ===== */
+footer {
+  background: var(--mork-gronn);
+  color: var(--solgul-70);
+  text-align: center;
+  padding: 24px 16px;
+  margin-top: 24px;
+}

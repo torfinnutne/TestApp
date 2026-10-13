@@ -18,10 +18,10 @@ En enkel intranettside laget med HTML, CSS og JavaScript.
 ## Slik endrer du den
 
 - **Nytt program:** legg til en linje i listen `programmer` øverst i `script.js`.
-- **Logo:** legg logofilen i mappen og kall den `logo.png`.
+- **Logo:** `logo.svg` er den negative horisontale logoen fra designmanualen.
 - **Ny nyhet:** kopier en `<article> ... </article>`-blokk i `index.html` og endre teksten.
 - **Ny kontakt:** kopier en `<tr> ... </tr>`-linje i `index.html`.
 - **Lenker:** bytt ut `href="#"` med ekte nettadresser.
-- **Farger:** endre verdiene øverst i `style.css`.
+- **Farger:** hentet fra designmanualen (designmanual.norsk-kylling.no) og ligger øverst i `style.css`.
 
 Lagre filen og trykk F5 i nettleseren for å se endringen.
