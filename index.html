@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intranett – Norsk Kylling</title>
+  <!-- Her kobler vi inn utseendet (farger, skrift, oppsett) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOPPEN AV SIDEN -->
+  <header>
+    <h1>🐔 Norsk Kylling – Intranett</h1>
+    <p id="hilsen">Velkommen!</p>
+  </header>
+
+  <!-- MENY -->
+  <nav>
+    <a href="#nyheter">Nyheter</a>
+    <a href="#lenker">Hurtiglenker</a>
+    <a href="#kalender">Kalender</a>
+    <a href="#kontakter">Kontakter</a>
+  </nav>
+
+  <main>
+
+    <!-- NYHETER: kopier en <article>-blokk for å legge til en ny sak -->
+    <section id="nyheter">
+      <h2>Nyheter</h2>
+      <article>
+        <h3>Velkommen til det nye intranettet</h3>
+        <p class="dato">13. oktober 2026</p>
+        <p>Dette er vår nye intranettside. Her finner du nyheter, nyttige lenker og kontaktinformasjon.</p>
+      </article>
+      <article>
+        <h3>Eksempel på nyhetssak</h3>
+        <p class="dato">10. oktober 2026</p>
+        <p>Bytt ut denne teksten med en ekte nyhet.</p>
+      </article>
+    </section>
+
+    <!-- HURTIGLENKER: bytt ut "#" med ekte nettadresser -->
+    <section id="lenker">
+      <h2>Hurtiglenker</h2>
+      <div class="lenker">
+        <a href="#" class="kort">📅 Timeføring</a>
+        <a href="#" class="kort">🦺 HMS og avvik</a>
+        <a href="#" class="kort">📄 Håndbøker</a>
+        <a href="#" class="kort">💻 IT-hjelp</a>
+        <a href="#" class="kort">🍽️ Kantinemeny</a>
+        <a href="#" class="kort">🏖️ Ferie og fravær</a>
+      </div>
+    </section>
+
+    <!-- KALENDER -->
+    <section id="kalender">
+      <h2>Kommende hendelser</h2>
+      <ul>
+        <li><strong>20. oktober</strong> – Allmøte i kantina kl. 12:00</li>
+        <li><strong>1. november</strong> – Brannøvelse</li>
+        <li><strong>13. desember</strong> – Julebord</li>
+      </ul>
+    </section>
+
+    <!-- KONTAKTER: legg til en ny rad (<tr>) for hver person -->
+    <section id="kontakter">
+      <h2>Kontakter</h2>
+      <input type="text" id="sok" placeholder="Søk etter navn eller avdeling...">
+      <table>
+        <thead>
+          <tr><th>Navn</th><th>Avdeling</th><th>Telefon</th></tr>
+        </thead>
+        <tbody id="kontaktliste">
+          <tr><td>Kari Nordmann</td><td>Produksjon</td><td>123 45 678</td></tr>
+          <tr><td>Ola Nordmann</td><td>IT</td><td>234 56 789</td></tr>
+          <tr><td>Per Hansen</td><td>HMS</td><td>345 67 890</td></tr>
+          <tr><td>Lise Olsen</td><td>Økonomi</td><td>456 78 901</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Norsk Kylling – internt bruk</p>
+  </footer>
+
+  <!-- Her kobler vi inn "hjernen" til siden (det som gjør ting interaktivt) -->
+  <script src="script.js"></script>
+</body>
+</html>

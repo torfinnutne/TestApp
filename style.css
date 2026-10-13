@@ -1,0 +1,100 @@
+/* ===== FARGER =====
+   Endre fargene her, så endres de over hele siden. */
+:root {
+  --hovedfarge: #c8102e;   /* rød */
+  --bakgrunn: #f7f4ef;     /* lys beige */
+  --kort: #ffffff;         /* hvit */
+  --tekst: #222222;        /* nesten svart */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bakgrunn);
+  color: var(--tekst);
+}
+
+header {
+  background: var(--hovedfarge);
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+header h1 { margin: 0; }
+
+nav {
+  background: #333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 16px;
+}
+
+nav a:hover { background: var(--hovedfarge); }
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+section {
+  background: var(--kort);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: var(--hovedfarge);
+  margin-top: 0;
+}
+
+article {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.dato { color: #777; font-size: 0.9em; }
+
+.lenker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.kort {
+  display: block;
+  padding: 16px;
+  background: var(--bakgrunn);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--tekst);
+  text-align: center;
+}
+
+.kort:hover { background: var(--hovedfarge); color: white; }
+
+#sok {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #eee; }
+
+footer {
+  text-align: center;
+  color: #777;
+  padding: 16px;
+}
