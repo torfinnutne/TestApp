@@ -4,92 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Intranett – Norsk Kylling</title>
-  <!-- Her kobler vi inn utseendet (farger, skrift, oppsett) -->
+  <!-- Skrifttype fra Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- TOPPEN AV SIDEN -->
-  <header>
-    <h1>🐔 Norsk Kylling – Intranett</h1>
-    <p id="hilsen">Velkommen!</p>
+  <!-- TOPPLINJE MED LOGO OG MENY -->
+  <header class="topplinje">
+    <a href="#" class="logo">
+      <!-- Legg logoen i prosjektmappen med navnet logo.png.
+           Finnes ikke filen, vises teksten "Norsk Kylling" i stedet. -->
+      <img src="logo.png" alt="Norsk Kylling" onerror="this.remove()">
+      <span class="logo-tekst">Norsk Kylling</span>
+    </a>
+    <nav>
+      <a href="#programmer">Programmer</a>
+      <a href="#nyheter">Nyheter</a>
+      <a href="#landax">Landax</a>
+      <a href="#together">Together</a>
+      <a href="#kontakter">Kontakter</a>
+    </nav>
   </header>
 
-  <!-- MENY -->
-  <nav>
-    <a href="#nyheter">Nyheter</a>
-    <a href="#lenker">Hurtiglenker</a>
-    <a href="#landax">Landax</a>
-    <a href="#together">Together</a>
-    <a href="#kalender">Kalender</a>
-    <a href="#kontakter">Kontakter</a>
-  </nav>
+  <!-- VELKOMSTFELT -->
+  <section class="velkommen">
+    <p id="dato"></p>
+    <h1 id="hilsen">Velkommen!</h1>
+    <p>Alt du trenger i arbeidsdagen, samlet på ett sted.</p>
+  </section>
 
   <main>
 
-    <!-- NYHETER: kopier en <article>-blokk for å legge til en ny sak -->
-    <section id="nyheter">
-      <h2>Nyheter</h2>
-      <article>
-        <h3>Velkommen til det nye intranettet</h3>
-        <p class="dato">13. oktober 2026</p>
-        <p>Dette er vår nye intranettside. Her finner du nyheter, nyttige lenker og kontaktinformasjon.</p>
-      </article>
-      <article>
-        <h3>Eksempel på nyhetssak</h3>
-        <p class="dato">10. oktober 2026</p>
-        <p>Bytt ut denne teksten med en ekte nyhet.</p>
-      </article>
+    <!-- PROGRAMMER: kortene lages automatisk fra listen i script.js -->
+    <section id="programmer">
+      <h2>Programmer</h2>
+      <div class="kortrutenett" id="programliste"></div>
     </section>
 
-    <!-- HURTIGLENKER: bytt ut "#" med ekte nettadresser -->
-    <section id="lenker">
-      <h2>Hurtiglenker</h2>
-      <div class="lenker">
-        <a href="#" class="kort">📅 Timeføring</a>
-        <a href="#" class="kort">🦺 HMS og avvik</a>
-        <a href="#" class="kort">📄 Håndbøker</a>
-        <a href="#" class="kort">💻 IT-hjelp</a>
-        <a href="#" class="kort">🍽️ Kantinemeny</a>
-        <a href="#" class="kort">🏖️ Ferie og fravær</a>
-      </div>
-    </section>
+    <div class="to-kolonner">
+      <!-- NYHETER: kopier en <article>-blokk for å legge til en ny sak -->
+      <section id="nyheter">
+        <h2>Nyheter</h2>
+        <article>
+          <p class="dato">13. oktober 2026</p>
+          <h3>Velkommen til det nye intranettet</h3>
+          <p>Her finner du programmer, nyheter og kontaktinformasjon.</p>
+        </article>
+        <article>
+          <p class="dato">10. oktober 2026</p>
+          <h3>Eksempel på nyhetssak</h3>
+          <p>Bytt ut denne teksten med en ekte nyhet.</p>
+        </article>
+      </section>
 
-    <!-- LANDAX: viser Landax-dashbordet inne i siden med en <iframe>.
-         En iframe er et "vindu" som viser en annen nettside. -->
+      <!-- KALENDER -->
+      <section id="kalender">
+        <h2>Kommende hendelser</h2>
+        <ul class="hendelser">
+          <li><span class="dag">20<small>okt</small></span> Allmøte i kantina kl. 12:00</li>
+          <li><span class="dag">1<small>nov</small></span> Brannøvelse</li>
+          <li><span class="dag">13<small>des</small></span> Julebord</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- LANDAX: en <iframe> er et "vindu" som viser en annen nettside -->
     <section id="landax">
-      <h2>Landax</h2>
+      <div class="seksjonstopp">
+        <h2>Landax</h2>
+        <a href="https://norskkylling.landax.no/dashboard/71" target="_blank" rel="noopener" class="knapp">Åpne i nytt vindu ↗</a>
+      </div>
       <iframe src="https://norskkylling.landax.no/dashboard/71" title="Landax"></iframe>
-      <p class="reserve">
-        Vises ikke Landax over?
-        <a href="https://norskkylling.landax.no/dashboard/71" target="_blank" rel="noopener" class="knapp">Åpne Landax i nytt vindu</a>
-      </p>
     </section>
 
     <!-- TOGETHER -->
     <section id="together">
-      <h2>Together</h2>
+      <div class="seksjonstopp">
+        <h2>Together</h2>
+        <a href="https://rema1000no.relesysapp.net/#/" target="_blank" rel="noopener" class="knapp">Åpne i nytt vindu ↗</a>
+      </div>
       <iframe src="https://rema1000no.relesysapp.net/#/" title="Together"></iframe>
-      <p class="reserve">
-        Vises ikke Together over?
-        <a href="https://rema1000no.relesysapp.net/#/" target="_blank" rel="noopener" class="knapp">Åpne Together i nytt vindu</a>
-      </p>
-    </section>
-
-    <!-- KALENDER -->
-    <section id="kalender">
-      <h2>Kommende hendelser</h2>
-      <ul>
-        <li><strong>20. oktober</strong> – Allmøte i kantina kl. 12:00</li>
-        <li><strong>1. november</strong> – Brannøvelse</li>
-        <li><strong>13. desember</strong> – Julebord</li>
-      </ul>
     </section>
 
     <!-- KONTAKTER: legg til en ny rad (<tr>) for hver person -->
     <section id="kontakter">
       <h2>Kontakter</h2>
-      <input type="text" id="sok" placeholder="Søk etter navn eller avdeling...">
+      <input type="text" id="sok" placeholder="🔍 Søk etter navn eller avdeling...">
       <table>
         <thead>
           <tr><th>Navn</th><th>Avdeling</th><th>Telefon</th></tr>
@@ -106,10 +108,9 @@
   </main>
 
   <footer>
-    <p>Norsk Kylling – internt bruk</p>
+    <p>Norsk Kylling · Intranett · Kun for internt bruk</p>
   </footer>
 
-  <!-- Her kobler vi inn "hjernen" til siden (det som gjør ting interaktivt) -->
   <script src="script.js"></script>
 </body>
 </html>

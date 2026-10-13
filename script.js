@@ -1,5 +1,30 @@
-// ===== 1. HILSEN =====
-// Viser "God morgen", "God dag" eller "God kveld" avhengig av klokka.
+// ===== 1. PROGRAMMER =====
+// Her legger du inn programmene. Én linje per program:
+//   { navn: "...", ikon: "...", beskrivelse: "...", lenke: "https://..." }
+// Ikonet kan være en hvilken som helst emoji.
+const programmer = [
+  { navn: "Landax", ikon: "🦺", beskrivelse: "Kvalitet og HMS", lenke: "https://norskkylling.landax.no/dashboard/71" },
+  { navn: "Together", ikon: "💬", beskrivelse: "Internkommunikasjon", lenke: "https://rema1000no.relesysapp.net/#/" },
+  // Legg til flere programmer her, for eksempel:
+  // { navn: "Timeføring", ikon: "⏱️", beskrivelse: "Før timer", lenke: "https://..." },
+];
+
+const programliste = document.getElementById("programliste");
+
+programmer.forEach(function (program) {
+  const kort = document.createElement("a");
+  kort.className = "programkort";
+  kort.href = program.lenke;
+  kort.target = "_blank";   // åpner i ny fane
+  kort.rel = "noopener";
+  kort.innerHTML =
+    '<span class="ikon">' + program.ikon + "</span>" +
+    "<span>" + program.navn + "</span>" +
+    "<small>" + program.beskrivelse + "</small>";
+  programliste.appendChild(kort);
+});
+
+// ===== 2. HILSEN OG DATO =====
 const time = new Date().getHours();
 let hilsen;
 
@@ -11,14 +36,12 @@ if (time < 10) {
   hilsen = "God kveld!";
 }
 
-const iDag = new Date().toLocaleDateString("no-NO", {
+document.getElementById("hilsen").textContent = hilsen;
+document.getElementById("dato").textContent = new Date().toLocaleDateString("no-NO", {
   weekday: "long", day: "numeric", month: "long", year: "numeric"
 });
 
-document.getElementById("hilsen").textContent = hilsen + " I dag er det " + iDag + ".";
-
-// ===== 2. SØK I KONTAKTER =====
-// Hver gang du skriver i søkefeltet, skjules rader som ikke passer.
+// ===== 3. SØK I KONTAKTER =====
 const sokefelt = document.getElementById("sok");
 const rader = document.querySelectorAll("#kontaktliste tr");
 

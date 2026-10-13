@@ -17,6 +17,8 @@ En enkel intranettside laget med HTML, CSS og JavaScript.
 
 ## Slik endrer du den
 
+- **Nytt program:** legg til en linje i listen `programmer` øverst i `script.js`.
+- **Logo:** legg logofilen i mappen og kall den `logo.png`.
 - **Ny nyhet:** kopier en `<article> ... </article>`-blokk i `index.html` og endre teksten.
 - **Ny kontakt:** kopier en `<tr> ... </tr>`-linje i `index.html`.
 - **Lenker:** bytt ut `href="#"` med ekte nettadresser.
